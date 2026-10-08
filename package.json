@@ -1,0 +1,13 @@
+{
+  "name": "ctu-practice-reminder",
+  "version": "0.1.0",
+  "description": "CTU Practice Reminder - theo doi lich thuc hanh",
+  "type": "module",
+  "scripts": {
+    "start": "node src/server.js",
+    "test": "node --test test/parser.test.js test/validation.test.js test/store.test.js test/sync.test.js test/reminders.test.js test/api.test.js test/discovery.test.js test/ui.test.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

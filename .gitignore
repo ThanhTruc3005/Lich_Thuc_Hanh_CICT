@@ -1,0 +1,32 @@
+# Secrets & local env (NEVER commit real credentials)
+.env
+.env.local
+.env.*.local
+*.pem
+*.key
+*token*.json
+*secret*.json
+secrets/
+
+# Runtime database (synced cache from Google Sheets, rebuildable via POST /api/sync)
+data/
+*.db
+*.db-shm
+*.db-wal
+*.sqlite
+*.sqlite3
+
+# Dependencies
+node_modules/
+
+# Logs & runtime files
+*.log
+logs/
+*.out
+*.pid
+
+# OS / editor junk
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

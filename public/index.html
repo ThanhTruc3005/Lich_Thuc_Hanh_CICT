@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CTU Practice Reminder</title>
+<link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap">
+    <div>
+      <h1>CTU Practice Reminder</h1>
+      <p class="subtitle">Theo dõi lịch thực hành của bạn</p>
+    </div>
+    <button id="syncBtn" class="btn ghost" type="button">↻ Đồng bộ</button>
+  </div>
+  <div class="wrap"><p id="syncState" class="sync-state">Đang tải trạng thái…</p></div>
+</header>
+
+<main class="wrap">
+  <div id="toast" class="toast" hidden></div>
+
+  <section id="notifySection" class="card notify" hidden>
+    <h2>🔔 Nhắc nhở</h2>
+    <ul id="notifyList" class="notify-list"></ul>
+  </section>
+
+  <section>
+    <h2>Lịch của tôi</h2>
+    <div class="filters" role="tablist" aria-label="Lọc lịch">
+      <button class="chip active" data-filter="today" type="button">Hôm nay</button>
+      <button class="chip" data-filter="tomorrow" type="button">Ngày mai</button>
+      <button class="chip" data-filter="past" type="button">Đã qua</button>
+      <button class="chip" data-filter="all" type="button">Tất cả</button>
+    </div>
+    <div id="loading" class="muted">Đang tải lịch…</div>
+    <div id="empty" class="card empty" hidden>
+      <p>Bạn chưa theo dõi môn nào.</p>
+      <p class="muted">Nhập mã môn và nhóm ở bên dưới rồi bấm <b>+ Theo dõi</b>.</p>
+    </div>
+    <div id="cards" class="cards"></div>
+  </section>
+
+  <section class="card">
+    <h2>Thêm môn cần theo dõi</h2>
+    <form id="addForm" autocomplete="off">
+      <div class="fields">
+        <label>Mã môn
+          <input id="courseInput" name="course" placeholder="CT005" maxlength="12" required>
+        </label>
+        <label>Nhóm
+          <input id="groupInput" name="group" placeholder="D04" maxlength="10" required>
+        </label>
+      </div>
+      <button class="btn primary" type="submit">+ Theo dõi</button>
+    </form>
+    <p class="hint">Ví dụ: mã môn <b>CT005</b>, nhóm <b>D04</b>. Lịch chỉ có buổi <b>Sáng / Chiều</b>.</p>
+  </section>
+</main>
+
+<footer class="wrap muted small">
+  <p>Nguồn lịch: Google Spreadsheet của trường. Dữ liệu đồng bộ định kỳ, có thể chậm hơn lịch gốc.</p>
+</footer>
+
+<script src="/app.js"></script>
+</body>
+</html>
